@@ -41,27 +41,27 @@ public class D01P04 {
 	public static void arrayOperations() {
 		 Scanner scanner = new Scanner(System.in);
 
-	       
+	        // Create an array of 18 elements
 	        int[] A = new int[18];
 
-	        
+	        // Prompt the user to enter the elements of the array
 	        System.out.println("Enter 18 integers:");
 	        for (int i = 0; i < A.length; i++) {
 	            A[i] = scanner.nextInt();
 	        }
 
-	        
+	        // Compute the sum of elements from index 0 to 14 and store it at element 15
 	        int sum = 0;
 	        for (int i = 0; i < 15; i++) {
 	            sum += A[i];
 	        }
 	        A[15] = sum;
 
-	       
+	        // Compute the average of all numbers and store it at element 16
 	        double average = (double) sum / A.length;
 	        A[16] = (int) average;
 
-	        
+	        // Identify the smallest value from the array and store it at element 17
 	        int min = A[0];
 	        for (int i = 1; i < A.length - 1; i++) {
 	            if (A[i] < min) {
@@ -70,7 +70,7 @@ public class D01P04 {
 	        }
 	        A[17] = min;
 
-	        
+	        // Display the elements of the array
 	        System.out.println("Array elements after computations:");
 	        for (int i = 0; i < A.length; i++) {
 	            System.out.print(A[i] + " ");
