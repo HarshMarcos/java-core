@@ -1,0 +1,65 @@
+package com.learning.core.day1session1;
+
+import java.util.Scanner;
+
+public class D01P03 {
+	
+	public static void getMonthName() {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter a number between 1 to 12: ");
+		
+		int month = scanner.nextInt();
+		scanner.close();
+		
+		String[] months = {
+		            "January", "February", "March", "April", 
+		            "May", "June", "July", "August", 
+		            "September", "October", "November", "December"
+			};
+		if (month >= 1 && month <= 12) {
+            // Display the name of the month
+            System.out.println(months[month - 1]);
+        } else {
+            System.out.println("Invalid Input");
+        }
+	}
+	
+	public static void weekDay() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter a number between 1 to 7: ");
+		
+		int weekdaynum = scanner.nextInt();
+		scanner.close();
+		
+		 String weekday;
+	        if (weekdaynum == 1) {
+	            weekday = "Sunday";
+	        } else if (weekdaynum == 2) {
+	            weekday = "Monday";
+	        } else if (weekdaynum == 3) {
+	            weekday = "Tuesday";
+	        } else if (weekdaynum == 4) {
+	            weekday = "Wednesday";
+	        } else if (weekdaynum == 5) {
+	            weekday = "Thursday";
+	        } else if (weekdaynum == 6) {
+	            weekday = "Friday";
+	        } else if (weekdaynum == 7) {
+	            weekday = "Saturday";
+	        } else {
+	            weekday = "Invalid input! Please enter a number between 1 to 7.";
+	        }
+
+	        
+	        System.out.println("The weekday is: " + weekday);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		getMonthName();
+		weekDay();
+	}
+
+}
