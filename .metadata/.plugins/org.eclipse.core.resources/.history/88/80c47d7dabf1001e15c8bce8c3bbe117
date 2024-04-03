@@ -1,0 +1,44 @@
+package com.learning.core.day1session1;
+
+import java.util.Scanner;
+
+public class D01P04 {
+	
+	
+	public static void bingoNumber() {
+		Scanner scanner = new Scanner(System.in);
+		
+		int a,b;
+		int[] array = {7, 25, 5, 19, 30};
+		
+		a = scanner.nextInt();
+		b = scanner.nextInt();
+		
+		boolean num1 = false;
+		boolean num2 = false;
+		
+		for(int i=0; i < array.length; i++) {
+			if(array[i] == a) {
+				num1 = true;
+			}
+			if(array[i] == b) {
+				num2 = true;
+			}
+		}
+		
+		if (num1 && num2) {
+            System.out.println("Its Bingo");
+        } else {
+            System.out.println("Not Found");
+        }
+
+        scanner.close();
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		bingoNumber();
+	}
+
+}
