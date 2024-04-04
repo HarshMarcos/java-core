@@ -1,0 +1,42 @@
+package com.learning.core.day2session1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class D02P05h {
+	
+	public static List<String> findMatchingStrings(String[] dictionary, String pattern) {
+        List<String> matches = new ArrayList<>();
+        for (String word : dictionary) {
+            if (word.length() == pattern.length()) {
+                int[] map = new int[26];
+                boolean match = true;
+                for (int i = 0; i < word.length(); i++) {
+                    char c = word.charAt(i);
+                    char p = pattern.charAt(i);
+                    if (map[c - 'a'] == 0) {
+                        map[c - 'a'] = p;
+                    } else if (map[c - 'a'] != p) {
+                        match = false;
+                        break;
+                    }
+                }
+                if (match) {
+                    matches.add(word);
+                }
+            }
+        }
+        return matches;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		int words = scanner.nextInt();
+		scanner.nextLine();
+		
+		String[] dicWords = new String[words];
+		String inputWords = scanner.nextLine();
+	}
+
+}

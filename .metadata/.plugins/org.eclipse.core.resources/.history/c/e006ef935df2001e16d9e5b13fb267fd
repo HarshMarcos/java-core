@@ -1,0 +1,68 @@
+package com.learning.core.day2session1;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.Stack;
+
+public class D02P01e {
+	public static boolean canFormCircle(String[] strings) {
+        if (strings == null || strings.length == 0)
+            return false;
+
+        // Create a graph representation using adjacency list
+        Map<Character, List<String>> graph = new HashMap<>();
+        for (String str : strings) {
+            char startChar = str.charAt(0);
+            char endChar = str.charAt(str.length() - 1);
+            if (!graph.containsKey(startChar))
+                graph.put(startChar, new ArrayList<>());
+            graph.get(startChar).add(str);
+        }
+
+        // Perform DFS to find if circle formation is possible
+        Stack<String> stack = new Stack<>();
+        Set<String> visited = new HashSet<>();
+        stack.push(strings[0]); // Start with the first string
+        visited.add(strings[0]);
+        while (!stack.isEmpty()) {
+            String current = stack.pop();
+            char endChar = current.charAt(current.length() - 1);
+            if (graph.containsKey(endChar)) {
+                for (String neighbor : graph.get(endChar)) {
+                    if (!visited.contains(neighbor)) {
+                        stack.push(neighbor);
+                        visited.add(neighbor);
+                    }
+                }
+            }
+        }
+
+        
+        return visited.size() == strings.length;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of strings:");
+        int n = scanner.nextInt();
+        scanner.nextLine(); 
+        System.out.println("Enter the strings separated by spaces:");
+        String[] strings = scanner.nextLine().split(" ");
+        scanner.close();
+
+        if (canFormCircle(strings)) {
+            System.out.println("Yes");
+            for (String str : strings) {
+                System.out.print(str + " ");
+            }
+            System.out.println();
+        } else {
+            System.out.println("No");
+        }
+    }
+}

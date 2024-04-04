@@ -1,0 +1,35 @@
+package com.learning.core.day2session1;
+
+import java.util.Scanner;
+
+public class D02P05b {
+	
+	public static void printSubsequence(String a, int n, int index, String curr) {
+		if(index == n)
+			return;
+		if(curr != null && !curr.trim().isEmpty())
+			System.out.println(curr);
+		for(int i = index + 1; i < n; i++) {
+			curr += a.charAt(i);
+			printSubsequence(a, n, i, curr);
+			curr = curr.substring(0, curr.length() - 1);
+		}
+	}
+	
+	static void printSubSeq(String a) {
+		int index = -1;
+		String curr = "";
+		
+		printSubsequence(a, a.length(), index, curr);
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		String a;
+		a = scanner.next();
+		scanner.close();
+		printSubSeq(a);
+	}
+}

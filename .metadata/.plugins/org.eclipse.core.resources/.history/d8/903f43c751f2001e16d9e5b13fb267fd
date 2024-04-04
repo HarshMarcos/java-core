@@ -1,0 +1,30 @@
+package com.learning.core.day2session1;
+
+import java.util.Scanner;
+
+public class D02P01d {
+	
+	public static String replace20(String a) {
+		a = a.trim();
+		
+		StringBuilder str = new StringBuilder();
+		
+		for(char x:a.toCharArray()) {
+			if(x==' ')
+				str.append("%20");
+			else
+				str.append(x);
+		}
+		return str.toString();
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		String a;
+		a = scanner.next();
+		scanner.close();
+		
+		System.out.println(replace20(a));
+	}
+}

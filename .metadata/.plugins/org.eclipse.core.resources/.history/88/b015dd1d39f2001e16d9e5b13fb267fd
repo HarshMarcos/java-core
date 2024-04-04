@@ -1,0 +1,23 @@
+package com.learning.core.day2session1;
+
+import java.util.Scanner;
+
+public class D02P01 {
+	
+	public static void isPalindrome() {
+		Scanner scanner = new Scanner(System.in);
+		
+		String a;
+		a = scanner.next();
+		
+		System.out.println(a.length());
+		System.out.println(a.toUpperCase());
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		isPalindrome();
+	}
+}
