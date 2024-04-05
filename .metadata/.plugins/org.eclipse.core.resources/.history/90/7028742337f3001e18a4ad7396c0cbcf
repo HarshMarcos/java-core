@@ -1,0 +1,10 @@
+package com.learning.core.java.day3session1;
+
+import java.util.TreeSet;
+
+public class D03P0e {
+	public static void main(String[] args) {
+		TreeSet<Person> treeSet = new TreeSet<Person>();
+		treeSet.add(new Person(5, "John", 32, 1999.0));
+	}
+}
