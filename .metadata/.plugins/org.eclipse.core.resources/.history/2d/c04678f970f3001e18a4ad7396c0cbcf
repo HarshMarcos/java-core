@@ -1,0 +1,16 @@
+package com.learning.core.java.day3session2;
+
+public class Car implements Comparable<Car>{
+	
+	private String name;
+	private double price;
+	
+	
+	@Override
+	public int compareTo(Car o) {
+		return Double.compare(this.price, o.price);
+	}
+	
+	
+	
+}

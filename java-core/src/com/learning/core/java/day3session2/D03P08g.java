@@ -1,0 +1,25 @@
+package com.learning.core.java.day3session2;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class D03P08g {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 TreeMap<Car, String> carMap = new TreeMap<>();
+
+	        carMap.put(new Car("Benz", 900000.0), "Luxury");
+	        carMap.put(new Car("Bugatti", 80050.0), "Super car");
+	        carMap.put(new Car("Audi", 600100.0), "Premium");
+	        carMap.put(new Car("Swift", 305000.0), "Economy");
+	        
+	        Map.Entry<Car, String> greatestEntry = carMap.lastEntry();
+	        System.out.println(greatestEntry.getKey()+ " "+greatestEntry.getValue());
+	        
+	        Map.Entry<Car, String> leastEntry = carMap.firstEntry();
+	        System.out.println(leastEntry.getKey()+" "+leastEntry.getValue());
+
+	}
+
+}

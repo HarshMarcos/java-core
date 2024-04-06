@@ -1,0 +1,23 @@
+package com.learning.core.java.day3session2;
+
+import java.util.Comparator;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class D03P08e {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<String, Double> carDetails = new TreeMap<>(Comparator.reverseOrder());
+		
+		carDetails.put("Bugati", 80050.0);
+		carDetails.put("Swift", 40050.0);
+		carDetails.put("Audi", 90050.0);
+		carDetails.put("Benz", 80050.0);
+		
+		for(Map.Entry<String, Double> entry : carDetails.entrySet()) {
+			System.out.println(entry.getKey() + " " + entry.getValue());
+		}
+	}
+ 
+}

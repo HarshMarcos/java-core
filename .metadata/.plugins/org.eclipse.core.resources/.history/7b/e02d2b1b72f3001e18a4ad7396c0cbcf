@@ -1,0 +1,30 @@
+package com.learning.core.java.day3session2;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class D03P08e {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<Car, String> carDetails = new TreeMap<>();
+
+        // Predefined Car details
+        Car car1 = new Car("Toyota", 25000);
+        Car car2 = new Car("Honda", 27000);
+        Car car3 = new Car("BMW", 50000);
+        Car car4 = new Car("Mercedes", 55000);
+
+        // Storing car details in TreeMap
+        carDetails.put(car1, "Details of Toyota");
+        carDetails.put(car2, "Details of Honda");
+        carDetails.put(car3, "Details of BMW");
+        carDetails.put(car4, "Details of Mercedes");
+
+        // Retrieving all car details
+        for (Map.Entry<Car, String> entry : carDetails.entrySet()) {
+            System.out.println(entry.getKey());
+        }
+	}
+ 
+}

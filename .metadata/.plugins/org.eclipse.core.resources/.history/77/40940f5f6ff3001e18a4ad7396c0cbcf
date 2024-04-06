@@ -1,0 +1,15 @@
+package com.learning.core.java.day3session2;
+
+import java.util.TreeMap;
+
+public class D03P08e {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<String, Double> carDetails = new TreeMap<>();
+		
+		carDetails.put("Bugati", 80050.0);
+		
+	}
+
+}

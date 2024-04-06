@@ -1,0 +1,13 @@
+package com.learning.core.java.day3session2;
+
+import java.util.TreeSet;
+
+public class D03P08c {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeSet<Book> treeSet = new TreeSet<Book>();
+		treeSet.add(new Book(1001, "Python Learning", 715.0f, "Martic C. Brown", "2/2/2020"));
+	}
+
+}

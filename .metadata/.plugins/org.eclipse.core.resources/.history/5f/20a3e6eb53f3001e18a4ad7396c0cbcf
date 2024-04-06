@@ -1,0 +1,12 @@
+package com.learning.core.java.day3session2;
+
+import java.util.TreeSet;
+
+public class D03P08c {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeSet<Book> treeSet = new TreeSet<Book>();
+	}
+
+}
