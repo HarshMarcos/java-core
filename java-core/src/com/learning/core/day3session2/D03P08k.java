@@ -1,0 +1,41 @@
+package com.learning.core.day3session2;
+
+import java.util.Hashtable;
+import java.util.Scanner;
+
+public class D03P08k {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Hashtable<Integer, Employee> hashTable = new Hashtable<Integer, Employee>();
+		
+		hashTable.put(101, new Employee(101, "Daniel", "Analyst", "L&D"));
+		hashTable.put(102, new Employee(102, "Thomas", "Tester", "Testing"));
+		hashTable.put(103, new Employee(103, "Robert", "Product Manager", "Development"));
+		hashTable.put(104, new Employee(104, "Grace", "Tech Support", "HR"));
+		hashTable.put(104, new Employee(105, "Cahrles", "QA", "Lead Testing"));
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Emplyee ID to search...");
+		int employeId = scanner.nextInt();
+		
+		if(hashTable.containsKey(employeId)) {
+			System.err.println("Employee ID already Exists!!");
+		}else {
+			System.err.println("Enter Employee Name: ");
+			scanner.nextLine();
+			String name = scanner.nextLine();
+			System.out.println("Enter Employee Department: ");
+			String department = scanner.nextLine();
+			System.out.println("Enter Emplyee Designation: ");
+			String desgination = scanner.nextLine();
+			hashTable.put(employeId , new Employee(employeId, name, department, desgination));
+			System.out.println("Employee Added successfully");
+		}
+		scanner.close();
+		for(Employee em:hashTable.values()) {
+			System.out.println(em);
+		}
+	}
+
+}
