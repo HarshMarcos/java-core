@@ -1,0 +1,20 @@
+package com.learning.core.day4session1;
+
+class Node{
+	int data;
+	Node next;
+	
+	Node(int data){
+		this.next = null;
+		this.data = data;
+	}
+}
+
+public class D04P09e {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

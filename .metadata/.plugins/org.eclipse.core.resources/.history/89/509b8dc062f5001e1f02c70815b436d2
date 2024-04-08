@@ -1,0 +1,49 @@
+package com.learning.core.day4session1;
+
+class Queue{
+	private int maxSize;
+	private int[] queueArray;
+	private int front;
+	private int rear;
+	private int currentSize;
+	
+	public Queue(int maxSize) {
+		this.maxSize = maxSize;
+		this.queueArray = new int[maxSize];
+		this.front = 0;
+		this.rear = -1;
+		this.currentSize = 0;
+	}
+	
+	public boolean isFull() {
+		return currentSize == maxSize;
+	}
+	
+	public boolean isEmpty() {
+		return currentSize == 0;
+	}
+	
+	public int size() {
+		return maxSize;
+	}
+	
+	public void enqueue(int item) {
+        if (isFull()) {
+            System.out.println("Queue is full. Cannot enqueue " + item);
+            return;
+        }
+        rear = (rear + 1) % maxSize;
+        queueArray[rear] = item;
+        currentSize++;
+        System.out.println(item + " enqueued to queue");
+    }
+}
+
+public class D04P09d {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

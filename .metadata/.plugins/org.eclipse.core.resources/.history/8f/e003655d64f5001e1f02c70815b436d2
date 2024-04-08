@@ -1,0 +1,35 @@
+package com.learning.core.day4session1;
+
+class Queuel{
+	private Node front;
+	private Node rear;
+	
+	public Queuel() {
+        this.front = null;
+        this.rear = null;
+    }
+	
+	public boolean isEmpty() {
+	        return front == null;
+	}
+	
+	public void enqueue(int data) {
+        Node newNode = new Node(data);
+        if (isEmpty()) {
+            front = newNode;
+            rear = newNode;
+        } else {
+            rear.next = newNode;
+            rear = newNode;
+        }
+    }
+}	
+
+public class D04P09e {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

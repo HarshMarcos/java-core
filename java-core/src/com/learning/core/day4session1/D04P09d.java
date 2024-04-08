@@ -1,0 +1,73 @@
+package com.learning.core.day4session1;
+
+class Queue{
+	private int maxSize;
+	private int[] queueArray;
+	private int front;
+	private int rear;
+	private int currentSize;
+	
+	public Queue(int maxSize) {
+		this.maxSize = maxSize;
+		this.queueArray = new int[maxSize];
+		this.front = 0;
+		this.rear = -1;
+		this.currentSize = 0;
+	}
+	
+	public boolean isFull() {
+		return currentSize == maxSize;
+	}
+	
+	public boolean isEmpty() {
+		return currentSize == 0;
+	}
+	
+	public int size() {
+		return maxSize;
+	}
+	
+	public void enqueue(int item) {
+        if (isFull()) {
+            System.out.println("Queue is full. Cannot enqueue " + item);
+            return;
+        }
+        rear = (rear + 1) % maxSize;
+        queueArray[rear] = item;
+        currentSize++;
+        System.out.println(item + " enqueued to queue");
+    }
+	 public int dequeue() {
+	        if (isEmpty()) {
+	            System.out.println("Queue is empty. Cannot dequeue.");
+	            return -1; // Or throw an exception
+	        }
+	        int dequeuedItem = queueArray[front];
+	        front = (front + 1) % maxSize;
+	        currentSize--;
+	        return dequeuedItem;
+	    }
+}
+
+public class D04P09d {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Queue queue = new Queue(4);
+		
+		queue.enqueue(10);
+		queue.enqueue(20);
+		queue.enqueue(30);
+		queue.enqueue(40);
+		
+//		while(!queue.isEmpty())
+//			System.out.println("Elements in Queue: " + queue.dequeue());
+//		
+		queue.dequeue();
+		System.out.println("After removing first element: ");
+		while(!queue.isEmpty())
+			System.out.print(queue.dequeue());
+
+	}
+
+}

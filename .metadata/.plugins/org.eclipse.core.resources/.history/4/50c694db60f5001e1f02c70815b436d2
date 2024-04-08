@@ -1,0 +1,43 @@
+package com.learning.core.day4session1;
+
+class Node{
+	int data;
+	Node next;
+	
+	public Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class Stack{
+	private Node top;
+	
+	public Stack() {
+		this.top = null;
+	}
+	
+	public boolean isEmpty() {
+		return top == null;
+	}
+	
+	public void push(int data) {
+		Node newNode = new Node(data);
+		if(isEmpty()) {
+			top = newNode;
+		}else {
+			newNode.next = top;
+			top = newNode;
+		}
+	}
+}
+
+	
+public class D04P09b {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

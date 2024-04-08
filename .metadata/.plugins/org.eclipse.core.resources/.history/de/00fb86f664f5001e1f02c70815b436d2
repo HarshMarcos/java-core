@@ -1,0 +1,24 @@
+package com.learning.core.day4session1;
+
+class CircularQueue {
+    private int[] queue;
+    private int front; // Front of the queue
+    private int rear; // Rear of the queue
+    private int size; // Current size of the queue
+    private int capacity; // Capacity of the queue
+
+    public CircularQueue(int capacity) {
+        this.capacity = capacity;
+        this.queue = new int[capacity];
+        this.front = -1;
+        this.rear = -1;
+        this.size = 0;
+    }
+public class D04P09f {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

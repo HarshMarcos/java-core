@@ -1,0 +1,56 @@
+package com.learning.core.day4session1;
+
+import java.util.Scanner;
+
+class Stack{
+	private int maxSize;
+	private String[] stackArray;
+	private int top;
+	
+	public Stack(int size) {
+		maxSize = size;
+		stackArray = new String[maxSize];
+		top = -1;
+	}
+	
+	public void push(String value) {
+		if(top == maxSize - 1) {
+			System.out.println("Stack Overflow");
+			return;
+		}
+		
+		stackArray[++top] = value;
+	}
+	
+	public String pop() {
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+            return null;
+        }
+        return stackArray[top--];
+    }
+}
+
+public class D04P09a {
+
+	public static void main(String[] args) {
+		
+		 Scanner scanner = new Scanner(System.in);
+		 
+		 System.out.println("Enter words into stack");
+		 String sentence = scanner.nextLine();
+		 String[] words = sentence.split("\\s+");
+		 
+		 Stack stack = new Stack(words.length);
+
+	     for (String word : words) {
+	    	 stack.push(word);
+	     }
+	     
+	     stack.pop();
+	     while (!stack.isEmpty()) {
+	            System.out.print(stack.pop() + " ");
+	        }
+	}
+
+}
